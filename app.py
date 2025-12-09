@@ -7,8 +7,8 @@ app = Flask(__name__)
 # ================== GODOFPANEL CONFIG ==================
 PANEL_NAME = "GodOfPanel API"
 PANEL_URL = "https://godofpanel.com/api/v2"
-API_KEY = "Gfefd5d5e78b7726ab644604ebbef9b28"
-SERVICE_ID = int(os.getenv("SERVICE_ID", "5836"))  # TikTok Comment Likes
+API_KEY = "fefd5d5e78b7726ab644604ebbef9b28"
+SERVICE_ID = 5836  # TikTok Comment Likes
 # =======================================================
 
 HTML_TEMPLATE = """
@@ -30,11 +30,7 @@ HTML_TEMPLATE = """
       justify-content: center;
       align-items: center;
     }
-    .box {
-      width: 100%;
-      max-width: 900px;
-      padding: 20px;
-    }
+    .box { width: 100%; max-width: 900px; padding: 20px; }
     .card {
       background: rgba(15,23,42,0.95);
       border-radius: 16px;
@@ -42,17 +38,8 @@ HTML_TEMPLATE = """
       border: 1px solid rgba(148,163,184,0.25);
       box-shadow: 0 25px 60px rgba(0,0,0,0.7);
     }
-    h1 {
-      font-size: 22px;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .sub {
-      font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 16px;
-    }
+    h1 { font-size: 22px; margin-bottom: 6px; text-transform: uppercase; }
+    .sub { font-size: 13px; color: #9ca3af; margin-bottom: 16px; }
     textarea {
       width: 100%;
       min-height: 190px;
@@ -64,12 +51,7 @@ HTML_TEMPLATE = """
       font-size: 13px;
       resize: vertical;
     }
-    .hint {
-      font-size: 11px;
-      color: #9ca3af;
-      margin-top: 6px;
-      line-height: 1.4;
-    }
+    .hint { font-size: 11px; color: #9ca3af; margin-top: 6px; }
     button {
       margin-top: 14px;
       background: linear-gradient(135deg, #6366f1, #a855f7);
@@ -81,7 +63,6 @@ HTML_TEMPLATE = """
       font-weight: 600;
       cursor: pointer;
       float: right;
-      box-shadow: 0 10px 25px rgba(79,70,229,0.6);
     }
     .log {
       margin-top: 16px;
@@ -94,11 +75,7 @@ HTML_TEMPLATE = """
       max-height: 260px;
       overflow-y: auto;
     }
-    .status {
-      margin-top: 8px;
-      font-size: 12px;
-      color: #9ca3af;
-    }
+    .status { margin-top: 8px; font-size: 12px; color: #9ca3af; }
   </style>
 </head>
 <body>
@@ -114,18 +91,14 @@ HTML_TEMPLATE = """
 https://www.tiktok.com/@user/video/123456789 username 100
 https://www.tiktok.com/@user/video/987654321 anotheruser 250">{{ orders or '' }}</textarea>
         <div class="hint">
-          Format: <b>LINK USERNAME QUANTITY</b><br>
-          Script šalje na API: <code>link</code>, <code>username</code>, <code>quantity</code>.
+          Format: <b>LINK USERNAME QUANTITY</b>
         </div>
 
         <button type="submit">🚀 SEND TO PANEL</button>
       </form>
 
       <div class="status">{{ status or '' }}</div>
-
-      {% if log %}
-      <div class="log">{{ log }}</div>
-      {% endif %}
+      {% if log %}<div class="log">{{ log }}</div>{% endif %}
     </div>
   </div>
 </body>
@@ -200,4 +173,3 @@ def index():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
-
