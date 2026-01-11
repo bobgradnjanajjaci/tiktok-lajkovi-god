@@ -7,7 +7,7 @@ app = Flask(__name__)
 # ================== GODOFPANEL CONFIG ==================
 PANEL_NAME = "GodOfPanel API"
 PANEL_URL = "https://godofpanel.com/api/v2"
-API_KEY = "efe7efb51f8b32ead8553db6c1094c4e"
+API_KEY = "f82ab8846492a0842480a8a6eb154e59"
 SERVICE_ID = 5836  # TikTok Comment Likes
 # =======================================================
 
@@ -173,5 +173,6 @@ def index():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
+
 
 
